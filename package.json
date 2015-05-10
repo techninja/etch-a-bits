@@ -1,0 +1,15 @@
+{
+  "name": "etch-a-bits",
+  "version": "0.1.0",
+  "description": "A full featured SVG editor and output controller to drive @MakerSylvia's WaterColorBot",
+  "main": "etch-a-bits.js",
+  "author": "techninja",
+  "license": "MIT",
+  "dependencies" : {
+    "cncserver": "https://github.com/techninja/cncserver/tarball/master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/techninja/etch-a-bits.git"
+  }
+}
