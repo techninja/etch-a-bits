@@ -2,7 +2,7 @@ var cncserver = require("cncserver");
 var serialport = require("./node_modules/cncserver/node_modules/serialport/serialport.js");
 var SerialPort = serialport.SerialPort;
 
-var port = process.argv[2] ? process.argv[2] : "/dev/ttyACM0";
+var port = process.argv[2];
 
 // Actually try to init the connection and handle the various callbacks
 cncserver.start({
@@ -15,7 +15,9 @@ cncserver.start({
   connect: function() {
     console.log('Bot Connected!');
     cncserver.setHeight('up');
-    startReading();
+    connectLeonardo(function(){
+      startReading();
+    });
   },
   disconnect: function() {
     console.log("Bot disconnected!")
@@ -121,5 +123,25 @@ function getWater(destPt) {
         gettingWater = false;
       })
     });
+  });
+}
+
+
+// Helper function for automatically connecting the littleBits leonardo
+function connectLeonardo(callback) {
+  serialport.list(function (err, ports) {
+    for (var portID in ports){
+      if (ports[portID].serialNumber === 'Arduino_LLC_Arduino_Leonardo') {
+        port = ports[portID].comName;
+      }
+    }
+
+    if (!port) {
+      console.error('Littlebits Leonardo not found! ERR 16');
+      process.exit(16);
+    } else {
+      console.log('Leonardo found on port:', port);
+      callback();
+    }
   });
 }
