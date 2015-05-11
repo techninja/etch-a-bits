@@ -94,7 +94,6 @@ function startReading(){
       }
 
       if (y!== lastY && y!== lastY-1 && y!== lastY+1) {
-        console.log(lastY - y);
         lastY = y;
         drawPt.y = (y+1) / 10.24;
         movingPen = true;
