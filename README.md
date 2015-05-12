@@ -1,7 +1,7 @@
 # Etch-A-Bits
 A LittleBits "EtchASketch" Style controller for the WaterColorBot via [CNCServer](http://github.com/techninja/cncserver).
 
-![Etch-a-Bits](https://cloud.githubusercontent.com/assets/320747/7578905/ccb7c756-f810-11e4-9cf9-b35196443e3b.jpg)
+![Etch-A-bits demo](https://cloud.githubusercontent.com/assets/320747/7582334/4ef922c0-f841-11e4-916f-32680ad3267d.gif)
 [Check out the video of this project in action!](https://www.youtube.com/watch?v=npvjusyj1jY)
 
 ## What you need:
