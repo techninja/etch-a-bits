@@ -2,7 +2,8 @@
 A LittleBits "EtchASketch" Style controller for the WaterColorBot via [CNCServer](http://github.com/techninja/cncserver).
 
 ![Etch-A-bits demo](https://cloud.githubusercontent.com/assets/320747/7582334/4ef922c0-f841-11e4-916f-32680ad3267d.gif)
-[Check out the video of this project in action!](https://www.youtube.com/watch?v=npvjusyj1jY)
+
+### [Check out the video of this project in action!](https://www.youtube.com/watch?v=npvjusyj1jY)
 
 ## What you need:
  0. 1 [littleBits Arduino kit](http://littlebits.cc/kits/arduino-coding-kit), includes fork, button, two dimmers, power block & Arduino block
