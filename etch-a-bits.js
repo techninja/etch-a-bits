@@ -23,6 +23,7 @@ var drawPt = {x: 0, y: 0};
 
 // Actually try to init the connection and handle the various callbacks
 cncserver.start({
+  localRunner: true,
   success: function() {
     console.log('Port found, connecting...');
   },
@@ -37,14 +38,14 @@ cncserver.start({
     });
   },
   disconnect: function() {
-    console.log("Bot disconnected!")
+    console.log("Bot disconnected!");
   }
 });
 
 function startReading(){
   serialPort = new SerialPort(port, {
     baudrate : 9600,
-    parser: serialport.parsers.readline("\n"),
+    parser: SerialPort.parsers.readline("\n"),
     disconnectedCallback: tryReconnect
   });
 
@@ -137,7 +138,7 @@ function getWater(destPt) {
       cncserver.setHeight('draw', function(){
         movingPen = false;
         gettingWater = false;
-      })
+      });
     });
   });
 }
@@ -145,7 +146,7 @@ function getWater(destPt) {
 
 // Helper function for automatically connecting the littleBits leonardo
 function connectLeonardo(callback) {
-  serialport.list(function (err, ports) {
+  SerialPort.list(function (err, ports) {
     for (var portID in ports){
       if (ports[portID].serialNumber === 'Arduino_LLC_Arduino_Leonardo') {
         port = ports[portID].comName;
