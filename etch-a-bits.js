@@ -1,6 +1,5 @@
 var cncserver = require("cncserver");
-var serialport = require("./node_modules/cncserver/node_modules/serialport/serialport.js");
-var SerialPort = serialport.SerialPort;
+var SerialPort = require("./node_modules/cncserver/node_modules/serialport/lib/serialport.js");
 var serialPort = {};
 
 var port = process.argv[2];
