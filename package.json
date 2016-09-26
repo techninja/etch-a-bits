@@ -11,5 +11,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/techninja/etch-a-bits.git"
+  },
+  "scripts": {
+    "start": "node etch-a-bits /dev/ttyACM0"
   }
 }
