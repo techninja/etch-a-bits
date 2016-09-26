@@ -55,12 +55,13 @@ function startReading(){
   });
 }
 
+var up;
 
 // Event data callback from littleBits Leonardo
 function controlData (data) {
   var d = data.split('|');
-  x = parseInt(d[0]);
-  y = parseInt(d[1]);
+  x = parseInt(d[0]) * 2;
+  y = parseInt(d[1]) * 2;
   b = parseInt(d[2]);
 
   // Button get water
@@ -74,7 +75,14 @@ function controlData (data) {
           reWaterInterval = setTimeout(function(){
             doubleClickWait = false;
             console.log('Button Pressed/Released! getting Water');
-            getWater(drawPt);
+            //getWater(drawPt);
+            if (up) {
+              up = false;
+              cncserver.setHeight('draw');
+            } else {
+              up = true;
+              cncserver.setHeight('up');
+            }
           }, 250);
         } else {
           console.log('Double button! Parking.');
