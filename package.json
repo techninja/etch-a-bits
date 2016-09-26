@@ -6,7 +6,7 @@
   "author": "techninja",
   "license": "MIT",
   "dependencies" : {
-    "cncserver": "https://github.com/techninja/cncserver/tarball/master"
+    "cncserver": "2.6.1"
   },
   "repository": {
     "type": "git",
