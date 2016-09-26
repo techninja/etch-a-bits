@@ -1,7 +1,7 @@
 {
   "name": "etch-a-bits",
   "version": "0.1.0",
-  "description": "A full featured SVG editor and output controller to drive @MakerSylvia's WaterColorBot",
+  "description": "A crazy littleBits powered experiment for the WaterColorBot.",
   "main": "etch-a-bits.js",
   "author": "techninja",
   "license": "MIT",
