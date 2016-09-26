@@ -1,5 +1,13 @@
 var cncserver = require("cncserver");
-var SerialPort = require("./node_modules/cncserver/node_modules/serialport/lib/serialport.js");
+
+var SerialPort = {};
+
+// Try to include from either NPM 2.x or 3.x flat.
+try {
+  SerialPort = require("serialport");
+} catch($e) {
+  SerialPort = require("./node_modules/cncserver/node_modules/serialport/lib/serialport.js");
+}
 var serialPort = {};
 
 var port = process.argv[2];
